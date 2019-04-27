@@ -8,11 +8,13 @@
 
 import UIKit
 import RealmSwift
+import ChameleonFramework
 
 class TodoListViewController: SwipeTableViewController {
 
     var todoItems: Results<Item>?
     let realm = try! Realm()
+    @IBOutlet weak var searchar: UISearchBar!
     
     var selectedCategory: Category? {
         didSet {
@@ -24,6 +26,27 @@ class TodoListViewController: SwipeTableViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        title = (selectedCategory?.name ?? "") + " Items"
+        guard let color = selectedCategory?.color else { fatalError() }
+        updateNavbar(withHexCode: color)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        updateNavbar(withHexCode: "005493")
+    }
+    
+    // MARK: - Navbar SSetup Methods
+    func updateNavbar(withHexCode color: String){
+        guard let navBar = navigationController?.navigationBar else { fatalError("Navigation Controller does not exists.") }
+        
+        guard let navColor = UIColor(hexString: color) else { fatalError() }
+        navBar.barTintColor = navColor
+        navBar.tintColor = ContrastColorOf(navColor, returnFlat: true)
+        navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: ContrastColorOf(navColor, returnFlat: true)]
+        searchar.barTintColor = navColor
+    }
+    
     // MARK: - Tableview Datasource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todoItems?.count ?? 1
@@ -33,6 +56,11 @@ class TodoListViewController: SwipeTableViewController {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         if let item = todoItems?[indexPath.row] {
             cell.textLabel?.text = item.title
+            
+            if let color = UIColor(hexString: selectedCategory!.color)?.darken(byPercentage: CGFloat(indexPath.row) / CGFloat(todoItems!.count)) {
+                cell.backgroundColor = color
+                cell.textLabel?.textColor = ContrastColorOf(color, returnFlat: true)
+            }
             
             cell.accessoryType = item.done ? .checkmark : .none
         } else {
