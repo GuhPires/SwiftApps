@@ -8,6 +8,9 @@
 ## Sensitive Info
 GoogleService-Info.plist
 
+## Documents
+Documents/
+
 ## Build generated
 build/
 DerivedData/
