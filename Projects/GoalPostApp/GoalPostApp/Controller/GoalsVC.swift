@@ -31,9 +31,6 @@ class GoalsVC: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func onCreatePressed(_ sender: Any) {
-        print("Creating Goal...")
-    }
 }
 
 // MARK: - Table View methods
