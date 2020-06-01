@@ -25,9 +25,9 @@ class GoalsVC: UIViewController {
     
     // MARK: - Actions
     @IBAction func onCreatePressed(_ sender: Any) {
-        print("Creating...");
+        guard let createGoalVC = storyboard?.instantiateViewController(withIdentifier: "CreateGoalVC") else { return }
+        presentDetail(createGoalVC)
     }
-    
 }
 
 // MARK: - Table View methods

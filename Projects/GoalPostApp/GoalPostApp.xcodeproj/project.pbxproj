@@ -17,6 +17,7 @@
 		ECAC0DB324857B470028F8DC /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC0DB224857B470028F8DC /* GoalCell.swift */; };
 		ECAC0DB52485924B0028F8DC /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC0DB42485924B0028F8DC /* GoalType.swift */; };
 		ECAC0DB7248599910028F8DC /* CreateGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC0DB6248599910028F8DC /* CreateGoalVC.swift */; };
+		ECAC0DB92485BB510028F8DC /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC0DB82485BB510028F8DC /* UIViewControllerExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		ECAC0DB224857B470028F8DC /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
 		ECAC0DB42485924B0028F8DC /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
 		ECAC0DB6248599910028F8DC /* CreateGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalVC.swift; sourceTree = "<group>"; };
+		ECAC0DB82485BB510028F8DC /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		EC1F1E6B24856F11007996D5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				ECAC0DB82485BB510028F8DC /* UIViewControllerExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				EC1F1E5624856E84007996D5 /* GoalsVC.swift in Sources */,
 				EC1F1E5224856E84007996D5 /* AppDelegate.swift in Sources */,
+				ECAC0DB92485BB510028F8DC /* UIViewControllerExt.swift in Sources */,
 				ECAC0DB52485924B0028F8DC /* GoalType.swift in Sources */,
 				EC1F1E5C24856E84007996D5 /* GoalPostApp.xcdatamodeld in Sources */,
 				ECAC0DB7248599910028F8DC /* CreateGoalVC.swift in Sources */,
