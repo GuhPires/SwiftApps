@@ -36,7 +36,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8K-Rv-Igg">
-                                        <rect key="frame" x="325" y="51.333333333333343" width="35" height="30"/>
+                                        <rect key="frame" x="325" y="46.333333333333336" width="35" height="30.000000000000007"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="lmS-ne-uN4"/>
                                         </constraints>
@@ -48,7 +48,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.42745098039215684" green="0.73725490196078436" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="A8K-Rv-Igg" firstAttribute="centerY" secondItem="j0N-wX-mpF" secondAttribute="centerY" id="14a-g9-wYk"/>
+                                    <constraint firstItem="A8K-Rv-Igg" firstAttribute="centerY" secondItem="j0N-wX-mpF" secondAttribute="centerY" constant="-5" id="14a-g9-wYk"/>
                                     <constraint firstAttribute="bottom" secondItem="j0N-wX-mpF" secondAttribute="bottom" constant="10" id="8Xd-QI-N9P"/>
                                     <constraint firstItem="j0N-wX-mpF" firstAttribute="centerX" secondItem="flB-K7-HL3" secondAttribute="centerX" id="9qa-PQ-lmQ"/>
                                     <constraint firstAttribute="height" constant="90" id="Xib-XU-WIa"/>
