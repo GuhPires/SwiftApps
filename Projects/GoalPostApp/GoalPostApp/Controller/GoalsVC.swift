@@ -23,10 +23,16 @@ class GoalsVC: UIViewController {
         tableView.isHidden = false
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CreateGoalSegue" {
+            // Pass data if needed
+        }
+    }
+    
     // MARK: - Actions
     @IBAction func onCreatePressed(_ sender: Any) {
-        guard let createGoalVC = storyboard?.instantiateViewController(withIdentifier: "CreateGoalVC") else { return }
-        presentDetail(createGoalVC)
+        print("Creating Goal...")
     }
 }
 
