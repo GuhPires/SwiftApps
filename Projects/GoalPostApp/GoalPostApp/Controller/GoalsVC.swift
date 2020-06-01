@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GoalsVC: UIViewController {
     
@@ -16,7 +17,8 @@ class GoalsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
     }
     
     // MARK: - Actions
