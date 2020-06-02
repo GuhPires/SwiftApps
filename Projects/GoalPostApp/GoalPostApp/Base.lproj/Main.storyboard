@@ -277,32 +277,44 @@
                                     <constraint firstAttribute="height" constant="260" id="HcI-hF-7Gc"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idA-fc-tVg">
-                                <rect key="frame" x="0.0" y="664" width="375" height="60"/>
-                                <color key="backgroundColor" red="0.91764705882352937" green="0.66274509803921566" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Rb-Zk-jqo">
+                                <rect key="frame" x="0.0" y="325" width="375" height="399"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idA-fc-tVg">
+                                        <rect key="frame" x="0.0" y="339" width="375" height="60"/>
+                                        <color key="backgroundColor" red="0.91764705882352937" green="0.66274509803921566" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="4Xo-ee-pSg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
+                                        <state key="normal" title="NEXT">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onNextBtnPressed:" destination="jjz-bR-LK0" eventType="touchUpInside" id="ebK-50-FUW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="w4S-y9-Bwd"/>
+                                    <constraint firstAttribute="trailing" secondItem="idA-fc-tVg" secondAttribute="trailing" id="P8h-q6-NVF"/>
+                                    <constraint firstAttribute="bottom" secondItem="idA-fc-tVg" secondAttribute="bottom" id="Rd1-W1-fXJ"/>
+                                    <constraint firstItem="idA-fc-tVg" firstAttribute="leading" secondItem="4Rb-Zk-jqo" secondAttribute="leading" id="Vl9-ex-wVg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
-                                <state key="normal" title="NEXT">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="onNextBtnPressed:" destination="jjz-bR-LK0" eventType="touchUpInside" id="ebK-50-FUW"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Y8u-nv-aAO" firstAttribute="top" secondItem="BIQ-A6-qle" secondAttribute="top" id="1k6-eM-bU5"/>
-                            <constraint firstAttribute="trailing" secondItem="idA-fc-tVg" secondAttribute="trailing" id="8vd-5v-Yl2"/>
                             <constraint firstAttribute="trailing" secondItem="wXt-Jy-fxP" secondAttribute="trailing" constant="15" id="HKb-lB-qpc"/>
+                            <constraint firstAttribute="trailing" secondItem="4Rb-Zk-jqo" secondAttribute="trailing" id="P7M-K5-PAJ"/>
                             <constraint firstItem="wXt-Jy-fxP" firstAttribute="leading" secondItem="BIQ-A6-qle" secondAttribute="leading" constant="15" id="ToB-HE-osJ"/>
+                            <constraint firstItem="4Rb-Zk-jqo" firstAttribute="leading" secondItem="BIQ-A6-qle" secondAttribute="leading" id="U1w-fG-bMY"/>
+                            <constraint firstItem="4Rb-Zk-jqo" firstAttribute="top" secondItem="wXt-Jy-fxP" secondAttribute="bottom" id="U5C-gS-eXX"/>
+                            <constraint firstItem="es3-B3-8Mx" firstAttribute="bottom" secondItem="4Rb-Zk-jqo" secondAttribute="bottom" id="Vu7-nL-gbU"/>
                             <constraint firstItem="Y8u-nv-aAO" firstAttribute="trailing" secondItem="BIQ-A6-qle" secondAttribute="trailing" id="gkg-Vc-4I0"/>
                             <constraint firstItem="Y8u-nv-aAO" firstAttribute="leading" secondItem="BIQ-A6-qle" secondAttribute="leading" id="goD-LW-tXX"/>
                             <constraint firstItem="wXt-Jy-fxP" firstAttribute="top" secondItem="Y8u-nv-aAO" secondAttribute="bottom" constant="5" id="hPd-px-HRs"/>
-                            <constraint firstItem="es3-B3-8Mx" firstAttribute="bottom" secondItem="idA-fc-tVg" secondAttribute="bottom" id="ikr-Ae-dg3"/>
-                            <constraint firstItem="idA-fc-tVg" firstAttribute="leading" secondItem="BIQ-A6-qle" secondAttribute="leading" id="wUz-4f-KqQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="es3-B3-8Mx"/>
                     </view>
