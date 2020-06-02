@@ -70,6 +70,27 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
         cell.configureCell(goal: goals[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "DELETE") { (action, view, completion) in
+            tableView.beginUpdates()
+            self.removeGoal(atIndexPath: indexPath)
+            self.fetchData()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+            completion(true)
+        }
+        action.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        return UISwipeActionsConfiguration(actions: [action])
+    }
 }
 
 // MARK: - Core Data methods
@@ -85,6 +106,18 @@ extension GoalsVC {
         } catch {
             debugPrint("Could not fetch: \(error.localizedDescription)")
             completion(false)
+        }
+    }
+    
+    func removeGoal(atIndexPath indexPath: IndexPath) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        
+        managedContext.delete(goals[indexPath.row])
+        
+        do {
+            try managedContext.save()
+        } catch {
+            debugPrint("Could not remove: \(error.localizedDescription)")
         }
     }
 }
