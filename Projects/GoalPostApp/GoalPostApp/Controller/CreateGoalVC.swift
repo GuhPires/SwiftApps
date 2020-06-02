@@ -22,9 +22,19 @@ class CreateGoalVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        goalTxtView.delegate = self
+        
         nextBtn.bindToKeyboard()
         shortTermBtn.setSelectedColor()
         longTermBtn.setDeselectedColor()
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FinishGoalSegue" {
+            let controller = segue.destination as! FinishGoalVC
+            controller.initData(description: sender as! String, type: goalType)
+        }
     }
     
     // MARK: - Actions
@@ -41,9 +51,20 @@ class CreateGoalVC: UIViewController {
     }
     
     @IBAction func onNextBtnPressed(_ sender: Any) {
+        if goalTxtView.text != "" && goalTxtView.text != "What is your goal?" {
+            performSegue(withIdentifier: "FinishGoalSegue", sender: goalTxtView.text)
+        }
     }
     
     @IBAction func onBackBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - Text View methods
+extension CreateGoalVC: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        goalTxtView.text = ""
+        goalTxtView.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
 }

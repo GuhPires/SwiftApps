@@ -18,9 +18,9 @@
 		ECAC0DB52485924B0028F8DC /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC0DB42485924B0028F8DC /* GoalType.swift */; };
 		ECAC0DB7248599910028F8DC /* CreateGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC0DB6248599910028F8DC /* CreateGoalVC.swift */; };
 		ECAC0DB92485BB510028F8DC /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC0DB82485BB510028F8DC /* UIViewControllerExt.swift */; };
-		ECAC0DBB2485BEDE0028F8DC /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC0DBA2485BEDE0028F8DC /* TestViewController.swift */; };
 		ECAC0DBD2485C0050028F8DC /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC0DBC2485C0050028F8DC /* UIViewExt.swift */; };
 		ECAC0DBF2485C34A0028F8DC /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC0DBE2485C34A0028F8DC /* UIButtonExt.swift */; };
+		ECAC0DC12485C7940028F8DC /* FinishGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC0DC02485C7940028F8DC /* FinishGoalVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,9 +37,9 @@
 		ECAC0DB42485924B0028F8DC /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
 		ECAC0DB6248599910028F8DC /* CreateGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalVC.swift; sourceTree = "<group>"; };
 		ECAC0DB82485BB510028F8DC /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
-		ECAC0DBA2485BEDE0028F8DC /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		ECAC0DBC2485C0050028F8DC /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		ECAC0DBE2485C34A0028F8DC /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
+		ECAC0DC02485C7940028F8DC /* FinishGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGoalVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +92,7 @@
 			children = (
 				EC1F1E5524856E84007996D5 /* GoalsVC.swift */,
 				ECAC0DB6248599910028F8DC /* CreateGoalVC.swift */,
-				ECAC0DBA2485BEDE0028F8DC /* TestViewController.swift */,
+				ECAC0DC02485C7940028F8DC /* FinishGoalVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -196,6 +196,7 @@
 			files = (
 				ECAC0DBF2485C34A0028F8DC /* UIButtonExt.swift in Sources */,
 				EC1F1E5624856E84007996D5 /* GoalsVC.swift in Sources */,
+				ECAC0DC12485C7940028F8DC /* FinishGoalVC.swift in Sources */,
 				EC1F1E5224856E84007996D5 /* AppDelegate.swift in Sources */,
 				ECAC0DBD2485C0050028F8DC /* UIViewExt.swift in Sources */,
 				ECAC0DB92485BB510028F8DC /* UIViewControllerExt.swift in Sources */,
@@ -203,7 +204,6 @@
 				EC1F1E5C24856E84007996D5 /* GoalPostApp.xcdatamodeld in Sources */,
 				ECAC0DB7248599910028F8DC /* CreateGoalVC.swift in Sources */,
 				ECAC0DB324857B470028F8DC /* GoalCell.swift in Sources */,
-				ECAC0DBB2485BEDE0028F8DC /* TestViewController.swift in Sources */,
 				EC1F1E5424856E84007996D5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
