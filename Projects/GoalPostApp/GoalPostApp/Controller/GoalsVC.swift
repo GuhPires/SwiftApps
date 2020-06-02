@@ -16,13 +16,33 @@ class GoalsVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Global variables/constants
+    var goals = [Goal]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.isHidden = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchData()
+    }
+    
+    // MARK: - Custom methods
+    func fetchData() {
+        fetch { (data) in
+            if data {
+                if goals.count > 0 {
+                    self.tableView.isHidden = false
+                } else {
+                    self.tableView.isHidden = true
+                }
+            }
+        }
+        tableView.reloadData()
     }
     
     // MARK: - Navigation
@@ -32,7 +52,9 @@ class GoalsVC: UIViewController {
         }
     }
     
-    @IBAction func goalWasCreated(_ unwindSegue: UIStoryboardSegue) { }
+    @IBAction func goalWasCreated(_ unwindSegue: UIStoryboardSegue) {
+        fetchData()
+    }
     
     // MARK: - Actions
 }
@@ -40,13 +62,29 @@ class GoalsVC: UIViewController {
 // MARK: - Table View methods
 extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return goals.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as? GoalCell else { return GoalCell() }
-        cell.configureCell(description: "Eat salad twice a week", type: .shortTerm, goalProgress: 2)
+        cell.configureCell(goal: goals[indexPath.row])
         return cell
     }
 }
 
+// MARK: - Core Data methods
+extension GoalsVC {
+    func fetch(completion: (_ complete: Bool) -> ()) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Goal")
+        
+        do {
+            goals = try managedContext.fetch(fetchRequest) as! [Goal]
+            completion(true)
+        } catch {
+            debugPrint("Could not fetch: \(error.localizedDescription)")
+            completion(false)
+        }
+    }
+}
