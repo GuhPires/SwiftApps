@@ -365,6 +365,9 @@
                                             <constraint firstAttribute="height" constant="30" id="xI7-Or-cX8"/>
                                         </constraints>
                                         <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="onBackPressed:" destination="5iy-mN-VFN" eventType="touchUpInside" id="iYc-bI-eE4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.42745098040000001" green="0.73725490199999999" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -408,6 +411,7 @@
                                         </state>
                                         <connections>
                                             <action selector="onCreateGoalPressed:" destination="5iy-mN-VFN" eventType="touchUpInside" id="d0c-Uf-mSU"/>
+                                            <segue destination="hFl-vo-Yvw" kind="unwind" identifier="GoalsUnwindSegue" unwindAction="goalWasCreated:" id="JyF-fs-dsf"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -441,6 +445,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kQL-ct-I3P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="hFl-vo-Yvw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1622" y="106"/>
         </scene>

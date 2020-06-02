@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+let appDelegate = UIApplication.shared.delegate as? AppDelegate
+
 class GoalsVC: UIViewController {
     
     // MARK: - Outlets
@@ -29,6 +31,8 @@ class GoalsVC: UIViewController {
             // Pass data if needed
         }
     }
+    
+    @IBAction func goalWasCreated(_ unwindSegue: UIStoryboardSegue) { }
     
     // MARK: - Actions
 }
